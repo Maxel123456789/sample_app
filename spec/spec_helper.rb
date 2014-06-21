@@ -3,6 +3,7 @@
 # The generated `.rspec` file contains `--require spec_helper` which will cause this
 # file to always be loaded, without a need to explicitly require it in any files.
 #
+
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
@@ -15,6 +16,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+    
+    require 'capybara/rspec'
+    require 'capybara/mechanize'
+ 
+    
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
@@ -75,4 +81,9 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 =end
+
+config.include Capybara::DSL
+
+
+
 end
